@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B5EF7891B3E2C5100502DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5EF7881B3E2C5100502DA9 /* AppDelegate.swift */; };
+		5B5EF78B1B3E2C5100502DA9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5B5EF78A1B3E2C5100502DA9 /* GameScene.sks */; };
+		5B5EF78D1B3E2C5100502DA9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5EF78C1B3E2C5100502DA9 /* GameScene.swift */; };
+		5B5EF78F1B3E2C5100502DA9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5EF78E1B3E2C5100502DA9 /* GameViewController.swift */; };
+		5B5EF7921B3E2C5100502DA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5EF7901B3E2C5100502DA9 /* Main.storyboard */; };
+		5B5EF7941B3E2C5100502DA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5EF7931B3E2C5100502DA9 /* Images.xcassets */; };
+		5B5EF7971B3E2C5100502DA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5EF7951B3E2C5100502DA9 /* LaunchScreen.xib */; };
+		5B5EF7A31B3E2C5100502DA9 /* Group4HackathonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5EF7A21B3E2C5100502DA9 /* Group4HackathonTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B5EF79D1B3E2C5100502DA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B5EF77B1B3E2C5100502DA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B5EF7821B3E2C5100502DA9;
+			remoteInfo = Group4Hackathon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5B5EF7831B3E2C5100502DA9 /* Group4Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group4Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B5EF7871B3E2C5100502DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B5EF7881B3E2C5100502DA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B5EF78A1B3E2C5100502DA9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		5B5EF78C1B3E2C5100502DA9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		5B5EF78E1B3E2C5100502DA9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5B5EF7911B3E2C5100502DA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B5EF7931B3E2C5100502DA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5B5EF7961B3E2C5100502DA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5B5EF79C1B3E2C5100502DA9 /* Group4HackathonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Group4HackathonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B5EF7A11B3E2C5100502DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B5EF7A21B3E2C5100502DA9 /* Group4HackathonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group4HackathonTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B5EF7801B3E2C5100502DA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B5EF7991B3E2C5100502DA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B5EF77A1B3E2C5100502DA9 = {
+			isa = PBXGroup;
+			children = (
+				5B5EF7851B3E2C5100502DA9 /* Group4Hackathon */,
+				5B5EF79F1B3E2C5100502DA9 /* Group4HackathonTests */,
+				5B5EF7841B3E2C5100502DA9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5B5EF7841B3E2C5100502DA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B5EF7831B3E2C5100502DA9 /* Group4Hackathon.app */,
+				5B5EF79C1B3E2C5100502DA9 /* Group4HackathonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B5EF7851B3E2C5100502DA9 /* Group4Hackathon */ = {
+			isa = PBXGroup;
+			children = (
+				5B5EF7881B3E2C5100502DA9 /* AppDelegate.swift */,
+				5B5EF78A1B3E2C5100502DA9 /* GameScene.sks */,
+				5B5EF78C1B3E2C5100502DA9 /* GameScene.swift */,
+				5B5EF78E1B3E2C5100502DA9 /* GameViewController.swift */,
+				5B5EF7901B3E2C5100502DA9 /* Main.storyboard */,
+				5B5EF7931B3E2C5100502DA9 /* Images.xcassets */,
+				5B5EF7951B3E2C5100502DA9 /* LaunchScreen.xib */,
+				5B5EF7861B3E2C5100502DA9 /* Supporting Files */,
+			);
+			path = Group4Hackathon;
+			sourceTree = "<group>";
+		};
+		5B5EF7861B3E2C5100502DA9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B5EF7871B3E2C5100502DA9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B5EF79F1B3E2C5100502DA9 /* Group4HackathonTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B5EF7A21B3E2C5100502DA9 /* Group4HackathonTests.swift */,
+				5B5EF7A01B3E2C5100502DA9 /* Supporting Files */,
+			);
+			path = Group4HackathonTests;
+			sourceTree = "<group>";
+		};
+		5B5EF7A01B3E2C5100502DA9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B5EF7A11B3E2C5100502DA9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B5EF7821B3E2C5100502DA9 /* Group4Hackathon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B5EF7A61B3E2C5100502DA9 /* Build configuration list for PBXNativeTarget "Group4Hackathon" */;
+			buildPhases = (
+				5B5EF77F1B3E2C5100502DA9 /* Sources */,
+				5B5EF7801B3E2C5100502DA9 /* Frameworks */,
+				5B5EF7811B3E2C5100502DA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Group4Hackathon;
+			productName = Group4Hackathon;
+			productReference = 5B5EF7831B3E2C5100502DA9 /* Group4Hackathon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B5EF79B1B3E2C5100502DA9 /* Group4HackathonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B5EF7A91B3E2C5100502DA9 /* Build configuration list for PBXNativeTarget "Group4HackathonTests" */;
+			buildPhases = (
+				5B5EF7981B3E2C5100502DA9 /* Sources */,
+				5B5EF7991B3E2C5100502DA9 /* Frameworks */,
+				5B5EF79A1B3E2C5100502DA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B5EF79E1B3E2C5100502DA9 /* PBXTargetDependency */,
+			);
+			name = Group4HackathonTests;
+			productName = Group4HackathonTests;
+			productReference = 5B5EF79C1B3E2C5100502DA9 /* Group4HackathonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B5EF77B1B3E2C5100502DA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Reed Carson";
+				TargetAttributes = {
+					5B5EF7821B3E2C5100502DA9 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					5B5EF79B1B3E2C5100502DA9 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 5B5EF7821B3E2C5100502DA9;
+					};
+				};
+			};
+			buildConfigurationList = 5B5EF77E1B3E2C5100502DA9 /* Build configuration list for PBXProject "Group4Hackathon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5B5EF77A1B3E2C5100502DA9;
+			productRefGroup = 5B5EF7841B3E2C5100502DA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B5EF7821B3E2C5100502DA9 /* Group4Hackathon */,
+				5B5EF79B1B3E2C5100502DA9 /* Group4HackathonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B5EF7811B3E2C5100502DA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B5EF7971B3E2C5100502DA9 /* LaunchScreen.xib in Resources */,
+				5B5EF7941B3E2C5100502DA9 /* Images.xcassets in Resources */,
+				5B5EF78B1B3E2C5100502DA9 /* GameScene.sks in Resources */,
+				5B5EF7921B3E2C5100502DA9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B5EF79A1B3E2C5100502DA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B5EF77F1B3E2C5100502DA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B5EF78D1B3E2C5100502DA9 /* GameScene.swift in Sources */,
+				5B5EF78F1B3E2C5100502DA9 /* GameViewController.swift in Sources */,
+				5B5EF7891B3E2C5100502DA9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B5EF7981B3E2C5100502DA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B5EF7A31B3E2C5100502DA9 /* Group4HackathonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B5EF79E1B3E2C5100502DA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B5EF7821B3E2C5100502DA9 /* Group4Hackathon */;
+			targetProxy = 5B5EF79D1B3E2C5100502DA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5B5EF7901B3E2C5100502DA9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B5EF7911B3E2C5100502DA9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5B5EF7951B3E2C5100502DA9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B5EF7961B3E2C5100502DA9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B5EF7A41B3E2C5100502DA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B5EF7A51B3E2C5100502DA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B5EF7A71B3E2C5100502DA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Group4Hackathon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5B5EF7A81B3E2C5100502DA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Group4Hackathon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5B5EF7AA1B3E2C5100502DA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Group4HackathonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Group4Hackathon.app/Group4Hackathon";
+			};
+			name = Debug;
+		};
+		5B5EF7AB1B3E2C5100502DA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Group4HackathonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Group4Hackathon.app/Group4Hackathon";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B5EF77E1B3E2C5100502DA9 /* Build configuration list for PBXProject "Group4Hackathon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B5EF7A41B3E2C5100502DA9 /* Debug */,
+				5B5EF7A51B3E2C5100502DA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B5EF7A61B3E2C5100502DA9 /* Build configuration list for PBXNativeTarget "Group4Hackathon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B5EF7A71B3E2C5100502DA9 /* Debug */,
+				5B5EF7A81B3E2C5100502DA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B5EF7A91B3E2C5100502DA9 /* Build configuration list for PBXNativeTarget "Group4HackathonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B5EF7AA1B3E2C5100502DA9 /* Debug */,
+				5B5EF7AB1B3E2C5100502DA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B5EF77B1B3E2C5100502DA9 /* Project object */;
+}
