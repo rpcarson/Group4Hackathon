@@ -8,35 +8,31 @@
 
 import SpriteKit
 
-
-var increaseX: SKNode!
-var increaseY: SKNode!
-var decreaseX: SKNode!
-var decreaseY: SKNode!
+var blackhole: SKNode?
 
 
+var Xlabel: SKLabelNode!
+var Ylabel: SKLabelNode!
 
+var budget: SKLabelNode!
 
-var velocityX: CGFloat! = 0
-var velocityY: CGFloat! = 0
+var budgetNumber: Int = 50000
 
-
-var projectileOne: SKShapeNode!
-
-var selectThree: SKNode!
-var selectTwo: SKNode!
-var selectOne: SKNode!
-
-var launcher: SKSpriteNode!
-var randomObject: SKSpriteNode!
-
-////
-var touchPoint: CGPoint = CGPoint()
-var touching: Bool = false
-////
+var reset: SKSpriteNode!
 
 class GameScene: SKScene {
+    
+    
     override func didMoveToView(view: SKView) {
+        
+        
+        
+        blackhole = childNodeWithName("blackhole")
+        budget = childNodeWithName("budget") as? SKLabelNode
+        reset = childNodeWithName("reset") as? SKSpriteNode
+        
+        Xlabel = childNodeWithName("axisXLabel") as? SKLabelNode
+        Ylabel = childNodeWithName("axisYLabel") as? SKLabelNode
         
         launcher = childNodeWithName("launcher") as? SKSpriteNode
         selectOne = childNodeWithName("buttonOne") as? SKSpriteNode
@@ -49,19 +45,23 @@ class GameScene: SKScene {
         decreaseY = childNodeWithName("decreaseY") as? SKSpriteNode
         
         
+        var bg = SKSpriteNode(imageNamed: "sky")
+
+       bg.size = self.frame.size
+        bg.position = CGPoint(x: frame.width / 2, y: frame.height / 2)
         
-        
+        blackhole.hidden = true
         
         /////////////\/\//\/\/\/\///\/\\/
-        self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
-        randomObject = SKSpriteNode(color: UIColor.redColor(), size: CGSize(width: 50, height: 50))
-        randomObject.physicsBody = SKPhysicsBody(rectangleOfSize: randomObject.size)
-        randomObject.position = CGPoint(x: self.size.width/2.0, y: self.size.height/2.0)
+    //    self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+      //  randomObject = SKSpriteNode(color: UIColor.redColor(), size: CGSize(width: 50, height: 50))
+      //  randomObject.physicsBody = SKPhysicsBody(rectangleOfSize: randomObject.size)
+      //  randomObject.position = CGPoint(x: self.size.width/2.0, y: self.size.height/2.0)
         //        self.addChild(randomObject)
         /////////////\\\/\/\/\/\//\\/\/\/\/
-        
-        
-        
+       
+//          addChild(bg)
+      
         
     }
     
@@ -69,37 +69,36 @@ class GameScene: SKScene {
         
         
         //\/\/\/\/
-        let touch = touches.first as! UITouch
-        let location = touch.locationInNode(self)
-        if randomObject.frame.contains(location) {
-            
-            touchPoint = location
-            touching = true
-        }
+//        let touch = touches.first as! UITouch
+//        let location = touch.locationInNode(self)
+//        if randomObject.frame.contains(location) {
+//            
+//            touchPoint = location
+//            touching = true
+//       
+//        }
         
         ///\/\//\/\/\
         
-        
-        //        let projectile = SKSpriteNode(imageNamed: "dolphin")
-        
-        let projectile = SKShapeNode(ellipseOfSize: CGSizeMake(40, 40))
-        projectile.physicsBody = SKPhysicsBody(circleOfRadius: 20)
-        projectile.physicsBody?.affectedByGravity = true
-        projectile.fillColor = UIColor.yellowColor()
-        
-        
-        
-        //        projectile.position = CGPoint(x: 50, y: 50)
-        
-        projectile.position = launcher.position
-        
-        //        projectile.physicsBody?.mass = 1
-        
-        //        addChild(projectile)
-        
-        
-        
-        projectile.physicsBody?.applyImpulse(CGVectorMake(50, 50))
+//        
+//        //        let projectile = SKSpriteNode(imageNamed: "dolphin")
+//        
+//        let projectile = SKShapeNode(ellipseOfSize: CGSizeMake(40, 40))
+//        projectile.physicsBody = SKPhysicsBody(circleOfRadius: 20)
+//        projectile.physicsBody?.affectedByGravity = true
+//        projectile.fillColor = UIColor.yellowColor()
+//        
+//        
+//        
+//        //        projectile.position = CGPoint(x: 50, y: 50)
+//        
+//        projectile.position = launcher.position
+//        
+//        //        projectile.physicsBody?.mass = 1
+//        
+//        //        addChild(projectile)
+//        
+//        projectile.physicsBody?.applyImpulse(CGVectorMake(50, 50))
         
         
         
@@ -113,6 +112,7 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
         touching = false
         
         for touch: AnyObject in touches {
@@ -121,8 +121,6 @@ class GameScene: SKScene {
             
             if selectOne .containsPoint(location) {
                 
-                //                println("testing")
-                
                 let projectile = SKShapeNode(ellipseOfSize: CGSizeMake(40, 40))
                 projectile.physicsBody = SKPhysicsBody(circleOfRadius: 20)
                 projectile.physicsBody?.affectedByGravity = true
@@ -130,6 +128,8 @@ class GameScene: SKScene {
                 projectile.position = launcher.position
                 addChild(projectile)
                 projectile.physicsBody?.applyImpulse(CGVectorMake(velocityX, velocityY))
+                budgetNumber = budgetNumber - 2500
+
                 
             }
             
@@ -141,7 +141,9 @@ class GameScene: SKScene {
                 projectile1.fillColor = UIColor.redColor()
                 projectile1.position = launcher.position
                 addChild(projectile1)
-                projectile1.physicsBody?.applyImpulse(CGVectorMake(50, 50))
+                projectile1.physicsBody?.applyImpulse(CGVectorMake(velocityX / 2, velocityY / 2))
+                budgetNumber = budgetNumber - 500
+                
             }
             
             if selectThree .containsPoint(location) {
@@ -152,8 +154,17 @@ class GameScene: SKScene {
                 projectile2.fillColor = UIColor.cyanColor()
                 projectile2.position = launcher.position
                 addChild(projectile2)
-                projectile2.physicsBody?.applyImpulse(CGVectorMake(50, 50))
+                projectile2.physicsBody?.applyImpulse(CGVectorMake(velocityX * 6, velocityY * 6))
+                budgetNumber = budgetNumber - 5000
+
+                blackhole.hidden = false
                 
+            }
+            
+            if reset .containsPoint(location) {
+
+                velocityX = 0
+                velocityY = 0
                 
             }
             
@@ -178,20 +189,23 @@ class GameScene: SKScene {
                 
             }
             
-            
-            
         }
     }
     
     override func update(currentTime: CFTimeInterval) {
         
-        if touching {
-            
-            let dt: CGFloat = 1.0/60.0
-            let distance = CGVector(dx: touchPoint.x-randomObject.position.x, dy: touchPoint.y-randomObject.position.y)
-            let velocity = CGVector(dx: distance.dx/dt, dy: distance.dy/dt)
-            randomObject.physicsBody!.velocity=velocity
-        }
+        Xlabel.text = "\(velocityX)"
+        Ylabel.text = "\(velocityY)"
+    
+        budget.text = "\(budgetNumber)"
+        
+//        if touching {
+//            
+//            let dt: CGFloat = 1.0/60.0
+//            let distance = CGVector(dx: touchPoint.x-randomObject.position.x, dy: touchPoint.y-randomObject.position.y)
+//            let velocity = CGVector(dx: distance.dx/dt, dy: distance.dy/dt)
+//            randomObject.physicsBody!.velocity=velocity
+//        }
         //\/\/\/\/\/\/\
         
     }
