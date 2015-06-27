@@ -16,6 +16,7 @@
 		5B5EF7941B3E2C5100502DA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5EF7931B3E2C5100502DA9 /* Images.xcassets */; };
 		5B5EF7971B3E2C5100502DA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5EF7951B3E2C5100502DA9 /* LaunchScreen.xib */; };
 		5B5EF7A31B3E2C5100502DA9 /* Group4HackathonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5EF7A21B3E2C5100502DA9 /* Group4HackathonTests.swift */; };
+		5BACBD3A1B3F370000C1F4BF /* cannon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5BACBD391B3F370000C1F4BF /* cannon.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		5B5EF79C1B3E2C5100502DA9 /* Group4HackathonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Group4HackathonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5EF7A11B3E2C5100502DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B5EF7A21B3E2C5100502DA9 /* Group4HackathonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group4HackathonTests.swift; sourceTree = "<group>"; };
+		5BACBD391B3F370000C1F4BF /* cannon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = cannon.wav; path = ../cannon.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		5B5EF7851B3E2C5100502DA9 /* Group4Hackathon */ = {
 			isa = PBXGroup;
 			children = (
+				5BACBD391B3F370000C1F4BF /* cannon.wav */,
 				5B5EF7881B3E2C5100502DA9 /* AppDelegate.swift */,
 				5B5EF78A1B3E2C5100502DA9 /* GameScene.sks */,
 				5B5EF78C1B3E2C5100502DA9 /* GameScene.swift */,
@@ -204,6 +207,7 @@
 				5B5EF7971B3E2C5100502DA9 /* LaunchScreen.xib in Resources */,
 				5B5EF7941B3E2C5100502DA9 /* Images.xcassets in Resources */,
 				5B5EF78B1B3E2C5100502DA9 /* GameScene.sks in Resources */,
+				5BACBD3A1B3F370000C1F4BF /* cannon.wav in Resources */,
 				5B5EF7921B3E2C5100502DA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

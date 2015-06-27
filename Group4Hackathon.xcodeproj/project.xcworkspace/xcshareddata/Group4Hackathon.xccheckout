@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>893220F1-7816-4D11-9090-C0EAA5F1B2A8</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Group4Hackathon</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>DBF8860CCAEBE0A5E2FE224C961E1F752B2BFB96</key>
 		<string>https://github.com/rpcarson/Group4Hackathon.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Group4Hackathon.xcodeproj/project.xcworkspace</string>
+	<string>Group4Hackathon.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>DBF8860CCAEBE0A5E2FE224C961E1F752B2BFB96</key>
