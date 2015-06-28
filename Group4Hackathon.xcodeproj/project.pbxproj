@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B4F923A1B3F75C20098FD6A /* NewGameScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F92391B3F75C20098FD6A /* NewGameScreen.sks */; };
-		5B4F923E1B3F779D0098FD6A /* NewGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F923D1B3F779D0098FD6A /* NewGameScreen.swift */; };
-		5B4F92431B3F79F20098FD6A /* WIDEAWAKE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F92401B3F79C10098FD6A /* WIDEAWAKE.TTF */; };
-		5B4F92441B3F79F50098FD6A /* Squares Bold Free.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F92411B3F79C90098FD6A /* Squares Bold Free.otf */; };
-		5B4F92451B3F79FA0098FD6A /* CodePredators-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F92421B3F79DD0098FD6A /* CodePredators-Regular.ttf */; };
+		5B0DF9C21B40318E0051E283 /* NewGameScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5B0DF9C11B40318E0051E283 /* NewGameScreen.sks */; };
+		5B0DF9C41B4031980051E283 /* NewGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0DF9C31B4031980051E283 /* NewGameScreen.swift */; };
 		5B5D961F1B3F15720034BFD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5D961E1B3F15720034BFD4 /* Constants.swift */; };
 		5B5EF7891B3E2C5100502DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5EF7881B3E2C5100502DA9 /* AppDelegate.swift */; };
 		5B5EF78B1B3E2C5100502DA9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5B5EF78A1B3E2C5100502DA9 /* GameScene.sks */; };
@@ -34,11 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5B4F92391B3F75C20098FD6A /* NewGameScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NewGameScreen.sks; sourceTree = "<group>"; };
-		5B4F923D1B3F779D0098FD6A /* NewGameScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameScreen.swift; sourceTree = "<group>"; };
-		5B4F92401B3F79C10098FD6A /* WIDEAWAKE.TTF */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = WIDEAWAKE.TTF; sourceTree = "<group>"; };
-		5B4F92411B3F79C90098FD6A /* Squares Bold Free.otf */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = "Squares Bold Free.otf"; sourceTree = "<group>"; };
-		5B4F92421B3F79DD0098FD6A /* CodePredators-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = "CodePredators-Regular.ttf"; sourceTree = "<group>"; };
+		5B0DF9C11B40318E0051E283 /* NewGameScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NewGameScreen.sks; sourceTree = "<group>"; };
+		5B0DF9C31B4031980051E283 /* NewGameScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameScreen.swift; sourceTree = "<group>"; };
 		5B5D961E1B3F15720034BFD4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5B5EF7831B3E2C5100502DA9 /* Group4Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group4Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5EF7871B3E2C5100502DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,9 +69,6 @@
 		5B4F923F1B3F79B30098FD6A /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				5B4F92421B3F79DD0098FD6A /* CodePredators-Regular.ttf */,
-				5B4F92411B3F79C90098FD6A /* Squares Bold Free.otf */,
-				5B4F92401B3F79C10098FD6A /* WIDEAWAKE.TTF */,
 			);
 			name = fonts;
 			path = Group4Hackathon;
@@ -87,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				5B4F923F1B3F79B30098FD6A /* fonts */,
-				5B4F923D1B3F779D0098FD6A /* NewGameScreen.swift */,
 				5B5EF7851B3E2C5100502DA9 /* Group4Hackathon */,
 				5B5EF79F1B3E2C5100502DA9 /* Group4HackathonTests */,
 				5B5EF7841B3E2C5100502DA9 /* Products */,
@@ -106,10 +96,11 @@
 		5B5EF7851B3E2C5100502DA9 /* Group4Hackathon */ = {
 			isa = PBXGroup;
 			children = (
+				5B0DF9C11B40318E0051E283 /* NewGameScreen.sks */,
+				5B0DF9C31B4031980051E283 /* NewGameScreen.swift */,
 				5B5D961E1B3F15720034BFD4 /* Constants.swift */,
 				5B5EF78A1B3E2C5100502DA9 /* GameScene.sks */,
 				5B5EF78C1B3E2C5100502DA9 /* GameScene.swift */,
-				5B4F92391B3F75C20098FD6A /* NewGameScreen.sks */,
 				5B5EF78E1B3E2C5100502DA9 /* GameViewController.swift */,
 				5B5EF7861B3E2C5100502DA9 /* Supporting Files */,
 			);
@@ -225,14 +216,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B4F92441B3F79F50098FD6A /* Squares Bold Free.otf in Resources */,
 				5B5EF7971B3E2C5100502DA9 /* LaunchScreen.xib in Resources */,
 				5B5EF7941B3E2C5100502DA9 /* Images.xcassets in Resources */,
-				5B4F92451B3F79FA0098FD6A /* CodePredators-Regular.ttf in Resources */,
 				5B5EF78B1B3E2C5100502DA9 /* GameScene.sks in Resources */,
-				5B4F923A1B3F75C20098FD6A /* NewGameScreen.sks in Resources */,
 				5B5EF7921B3E2C5100502DA9 /* Main.storyboard in Resources */,
-				5B4F92431B3F79F20098FD6A /* WIDEAWAKE.TTF in Resources */,
+				5B0DF9C21B40318E0051E283 /* NewGameScreen.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +241,7 @@
 				5B5EF78D1B3E2C5100502DA9 /* GameScene.swift in Sources */,
 				5B5EF78F1B3E2C5100502DA9 /* GameViewController.swift in Sources */,
 				5B5EF7891B3E2C5100502DA9 /* AppDelegate.swift in Sources */,
-				5B4F923E1B3F779D0098FD6A /* NewGameScreen.swift in Sources */,
+				5B0DF9C41B4031980051E283 /* NewGameScreen.swift in Sources */,
 				5B5D961F1B3F15720034BFD4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

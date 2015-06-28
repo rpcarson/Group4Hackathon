@@ -9,8 +9,14 @@
 import SpriteKit
 import AVFoundation
 
+var server1: SKSpriteNode!
+var server2: SKSpriteNode!
 
+var server: SKSpriteNode!
 
+var projectile1: SKSpriteNode!
+
+var juniorTex: SKTexture!
 var resetGame: SKSpriteNode!
 
 var score: Int!
@@ -18,6 +24,7 @@ var label2: SKLabelNode!
 var computer: SKSpriteNode!
 var contactMask: UInt32 = 1
 var contactMaskComputer: UInt32 = 2
+var destroyableMask: UInt32 = 3
 
 var floor: SKSpriteNode!
 
@@ -36,12 +43,26 @@ var budgetNumber: Int = 50000
 var reset: SKSpriteNode!
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+
+    
     
     override func didMoveToView(view: SKView) {
         
+//        var bg = SKSpriteNode(imageNamed: "background")
+//        bg.size = self.frame.size
+//        bg.position = CGPoint(x: frame.width / 2, y: frame.height / 2)
+//        addChild(bg)
+       
+        
+        server2 = childNodeWithName("server") as? SKSpriteNode
+        server1 = childNodeWithName("server") as? SKSpriteNode
+
+        server = childNodeWithName("server") as? SKSpriteNode
+        
+        juniorTex = SKTexture(imageNamed: "fullstacker")
         
         resetGame = childNodeWithName("resetGame") as? SKSpriteNode
-//        resetGame.hidden = true
+        resetGame.hidden = true
         
         label2 = childNodeWithName("label2") as? SKLabelNode
         label2.hidden = true
@@ -65,25 +86,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         decreaseX = childNodeWithName("decreaseX") as? SKSpriteNode
         decreaseY = childNodeWithName("decreaseY") as? SKSpriteNode
         
-        var bg = SKSpriteNode(imageNamed: "sky")
-        bg.size = self.frame.size
-        bg.position = CGPoint(x: frame.width / 2, y: frame.height / 2)
+  
+        server.physicsBody?.categoryBitMask = destroyableMask
+        server1.physicsBody?.categoryBitMask = destroyableMask
+        server2.physicsBody?.categoryBitMask = destroyableMask
+
         
-        //          addChild(bg)
+//        println(server.physicsBody?.categoryBitMask)
         
         computer.physicsBody = SKPhysicsBody(rectangleOfSize: computer.size)
         computer.physicsBody?.usesPreciseCollisionDetection = true
         computer.physicsBody?.categoryBitMask = contactMaskComputer
-        println(computer.physicsBody?.categoryBitMask)
-        
-        println(floor.frame)
+ 
         
         floor.physicsBody = SKPhysicsBody(rectangleOfSize: floor.size)
         floor.physicsBody?.affectedByGravity = false
-        floor.physicsBody?.categoryBitMask = contactMask
+//        floor.physicsBody?.categoryBitMask = contactMask
         floor.physicsBody?.pinned = true
         floor.physicsBody?.allowsRotation = false
         floor.physicsBody?.dynamic = false
+        
         //        floor.physicsBody?.mass = 10
         
         
@@ -131,23 +153,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if selectTwo .containsPoint(location) {
                 
-                let projectile1 = SKShapeNode(ellipseOfSize: CGSizeMake(25, 25))
-                projectile1.physicsBody = SKPhysicsBody(circleOfRadius: 12.5)
-                projectile1.physicsBody?.affectedByGravity = true
-                projectile1.physicsBody?.usesPreciseCollisionDetection = true
-                projectile1.fillColor = UIColor.redColor()
-                projectile1.position = launcher.position
-                projectile1.physicsBody?.categoryBitMask = contactMask
-                projectile1.physicsBody?.contactTestBitMask = contactMaskComputer
+                let projectile1 = SKSpriteNode(imageNamed: "fullstacker")
+                projectile1.physicsBody = SKPhysicsBody(texture: juniorTex, size: CGSize(width: 100, height: 100))
+                projectile1.physicsBody?.affectedByGravity = false
+                projectile1.physicsBody?.usesPreciseCollisionDetection = false
+//                projectile1.fillColor = UIColor.redColor()
+                projectile1.position = CGPoint(x: 50, y: velocityY * 5)
+                projectile1.physicsBody?.categoryBitMask = 6
+                projectile1.physicsBody?.contactTestBitMask = destroyableMask
+                
+             
                 
                 addChild(projectile1)
-                projectile1.physicsBody?.applyImpulse(CGVectorMake(velocityX / 2, velocityY / 2))
-                budgetNumber = budgetNumber - 1000
+                
+                projectile1.physicsBody?.applyImpulse(CGVectorMake(15, 0))
                 
                 
-                //                audioPlayer = AVAudioPlayer(contentsOfURL: fireEffect, error: nil)
-                //                audioPlayer.prepareToPlay()
-                //                audioPlayer.play()
+                budgetNumber = budgetNumber - 20000
                 
             }
             
@@ -198,7 +220,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if resetGame .containsPoint(location) {
                 
                 println("end game and reset")
-                createGame()
+            
             }
             
             
@@ -217,20 +239,51 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        self.presentViewController(scoreScreen, animated: true, completion: nil)
     }
     
+   
+    func removeMissile() {
+        
+        println("missile")
+        server.removeFromParent()
+//        projectile1?.removeFromParent()
+//        reloadInputViews()
+        
+    }
+    
     func didBeginContact(contact: SKPhysicsContact) {
         
         //        println("test")
         
-        //        let firstNode = contact.bodyA.node as! SKSpriteNode
-        //        let secondNode = contact.bodyB.node as! SKSpriteNode
+                let firstNode = contact.bodyA.node as? SKSpriteNode
+                let secondNode = contact.bodyB.node as? SKSpriteNode
         
         let firstMask = contact.bodyA.categoryBitMask
         let secMask = contact.bodyB.categoryBitMask
         
-        if (firstMask == contactMaskComputer) && (secMask == contactMask) {
-            println("yay")
+        if (firstMask == 6) && (secMask == destroyableMask) || (firstMask == destroyableMask) && (secMask == 6){
+
+           
+           
             
-            resetGame.hidden = false
+            
+            firstNode?.removeFromParent()
+            secondNode?.removeFromParent()
+            
+//            println("missile")
+            
+            
+//            projectile1.removeFromParent()
+//            server.removeFromParent()
+            
+            
+        }
+        
+         if (firstMask == contactMaskComputer) && (secMask == contactMask) {
+//            println("yay")
+            
+            
+            computer.removeFromParent()
+            
+//            resetGame.hidden = false
             
             label2.hidden = false
             
@@ -243,6 +296,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 label2.text = "You Have $\(abs(budgetNumber)) Leftover!"
             }
         }
+            
+        
+        
+      
     }
     
     override func update(currentTime: CFTimeInterval) {
