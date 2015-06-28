@@ -9,6 +9,10 @@
 import SpriteKit
 import AVFoundation
 
+
+
+var resetGame: SKSpriteNode!
+
 var score: Int!
 var label2: SKLabelNode!
 var computer: SKSpriteNode!
@@ -33,16 +37,16 @@ var reset: SKSpriteNode!
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
-    
     override func didMoveToView(view: SKView) {
         
-        label2 = childNodeWithName("label2") as? SKLabelNode
         
+        resetGame = childNodeWithName("resetGame") as? SKSpriteNode
+//        resetGame.hidden = true
+        
+        label2 = childNodeWithName("label2") as? SKLabelNode
         label2.hidden = true
         
-        
         floor = childNodeWithName("floor") as? SKSpriteNode
-        
         computer = childNodeWithName("computer") as? SKSpriteNode
         
         budget = childNodeWithName("budget") as? SKLabelNode
@@ -62,81 +66,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         decreaseY = childNodeWithName("decreaseY") as? SKSpriteNode
         
         var bg = SKSpriteNode(imageNamed: "sky")
-       bg.size = self.frame.size
+        bg.size = self.frame.size
         bg.position = CGPoint(x: frame.width / 2, y: frame.height / 2)
         
+        //          addChild(bg)
         
-        /////////////\/\//\/\/\/\///\/\\/
-    //    self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
-      //  randomObject = SKSpriteNode(color: UIColor.redColor(), size: CGSize(width: 50, height: 50))
-      //  randomObject.physicsBody = SKPhysicsBody(rectangleOfSize: randomObject.size)
-      //  randomObject.position = CGPoint(x: self.size.width/2.0, y: self.size.height/2.0)
-        //        self.addChild(randomObject)
-        /////////////\\\/\/\/\/\//\\/\/\/\/
-       
-//          addChild(bg)
-      
         computer.physicsBody = SKPhysicsBody(rectangleOfSize: computer.size)
         computer.physicsBody?.usesPreciseCollisionDetection = true
         computer.physicsBody?.categoryBitMask = contactMaskComputer
         println(computer.physicsBody?.categoryBitMask)
         
-       
         println(floor.frame)
         
-//        floor.physicsBody = SKPhysicsBody(edgeLoopFromRect: floor.frame)
         floor.physicsBody = SKPhysicsBody(rectangleOfSize: floor.size)
         floor.physicsBody?.affectedByGravity = false
         floor.physicsBody?.categoryBitMask = contactMask
         floor.physicsBody?.pinned = true
         floor.physicsBody?.allowsRotation = false
         floor.physicsBody?.dynamic = false
-//        floor.physicsBody?.mass = 10
+        //        floor.physicsBody?.mass = 10
         
         
         physicsWorld.contactDelegate = self
-        
         
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         
-        
-        //\/\/\/\/
-//        let touch = touches.first as! UITouch
-//        let location = touch.locationInNode(self)
-//        if randomObject.frame.contains(location) {
-//            
-//            touchPoint = location
-//            touching = true
-//       
-//        }
-        
-        ///\/\//\/\/\
-        
-//        
-//        //        let projectile = SKSpriteNode(imageNamed: "dolphin")
-//        
-//        let projectile = SKShapeNode(ellipseOfSize: CGSizeMake(40, 40))
-//        projectile.physicsBody = SKPhysicsBody(circleOfRadius: 20)
-//        projectile.physicsBody?.affectedByGravity = true
-//        projectile.fillColor = UIColor.yellowColor()
-//        
-//        
-//        
-//        //        projectile.position = CGPoint(x: 50, y: 50)
-//        
-//        projectile.position = launcher.position
-//        
-//        //        projectile.physicsBody?.mass = 1
-//        
-//        //        addChild(projectile)
-//        
-//        projectile.physicsBody?.applyImpulse(CGVectorMake(50, 50))
-        
-        
-        
     }
+    
     //\/\/\//\/\/
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
         let touch = touches.first as! UITouch
@@ -147,7 +105,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         
-//        touching = false
         
         for touch: AnyObject in touches {
             
@@ -163,12 +120,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 projectile.position = launcher.position
                 projectile.physicsBody?.categoryBitMask = contactMask
                 projectile.physicsBody?.contactTestBitMask = contactMaskComputer
-
+                
                 addChild(projectile)
                 
                 projectile.physicsBody?.applyImpulse(CGVectorMake(velocityX, velocityY))
                 budgetNumber = budgetNumber - 2500
-
+                
                 
             }
             
@@ -182,15 +139,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 projectile1.position = launcher.position
                 projectile1.physicsBody?.categoryBitMask = contactMask
                 projectile1.physicsBody?.contactTestBitMask = contactMaskComputer
-
+                
                 addChild(projectile1)
                 projectile1.physicsBody?.applyImpulse(CGVectorMake(velocityX / 2, velocityY / 2))
                 budgetNumber = budgetNumber - 1000
                 
                 
-//                audioPlayer = AVAudioPlayer(contentsOfURL: fireEffect, error: nil)
-//                audioPlayer.prepareToPlay()
-//                audioPlayer.play()
+                //                audioPlayer = AVAudioPlayer(contentsOfURL: fireEffect, error: nil)
+                //                audioPlayer.prepareToPlay()
+                //                audioPlayer.play()
                 
             }
             
@@ -207,12 +164,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 addChild(projectile2)
                 projectile2.physicsBody?.applyImpulse(CGVectorMake(velocityX * 6, velocityY * 6))
                 budgetNumber = budgetNumber - 5000
-
+                
                 
             }
             
             if reset .containsPoint(location) {
-
+                
                 velocityX = 0
                 velocityY = 0
                 
@@ -238,28 +195,42 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 velocityY = velocityY - 10
                 
             }
+            if resetGame .containsPoint(location) {
+                
+                println("end game and reset")
+                createGame()
+            }
+            
             
         }
     }
     
+    func restartGame() {
+//        self.removeAllActions()
+//        self.removeChildrenInArray(nodes: [projectile]!)
+//        createGame()
+    }
+    
+    func createGame() {
+      
+//        let scoreScreen = self.storyboard?.instantiateViewControllerWithIdentifier("scoreScreen") as! UIViewController
+//        self.presentViewController(scoreScreen, animated: true, completion: nil)
+    }
+    
     func didBeginContact(contact: SKPhysicsContact) {
         
-//        println("test")
+        //        println("test")
         
-//        let firstNode = contact.bodyA.node as! SKSpriteNode
-//        let secondNode = contact.bodyB.node as! SKSpriteNode
+        //        let firstNode = contact.bodyA.node as! SKSpriteNode
+        //        let secondNode = contact.bodyB.node as! SKSpriteNode
         
         let firstMask = contact.bodyA.categoryBitMask
         let secMask = contact.bodyB.categoryBitMask
         
-//        if ((firstMask == 10) && (secMask == 0)) || ((firstMask == 1) && (secMask == 0)) || ((firstMask == 2) && (secMask == 0)) || ((firstMask == 3) && (secMask == 0)) {
-//           
-//            println("yay")
-//            
-//        }
-
         if (firstMask == contactMaskComputer) && (secMask == contactMask) {
             println("yay")
+            
+            resetGame.hidden = false
             
             label2.hidden = false
             
@@ -278,17 +249,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         Xlabel.text = "\(velocityX)"
         Ylabel.text = "\(velocityY)"
-    
-        budget.text = "\(budgetNumber)"
         
-//        if touching {
-//            
-//            let dt: CGFloat = 1.0/60.0
-//            let distance = CGVector(dx: touchPoint.x-randomObject.position.x, dy: touchPoint.y-randomObject.position.y)
-//            let velocity = CGVector(dx: distance.dx/dt, dy: distance.dy/dt)
-//            randomObject.physicsBody!.velocity=velocity
-//        }
-        //\/\/\/\/\/\/\
+        budget.text = "\(budgetNumber)"
         
     }
 }
