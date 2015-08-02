@@ -9,6 +9,12 @@
 import SpriteKit
 import AVFoundation
 
+
+
+var moveRight: SKSpriteNode!
+var moveLeft: SKSpriteNode!
+
+
 var server1: SKSpriteNode!
 var server2: SKSpriteNode!
 
@@ -53,6 +59,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        bg.position = CGPoint(x: frame.width / 2, y: frame.height / 2)
 //        addChild(bg)
        
+        moveLeft = childNodeWithName("moveLeft") as? SKSpriteNode
+        moveRight = childNodeWithName("moveRight") as? SKSpriteNode
+        
         
         server2 = childNodeWithName("server") as? SKSpriteNode
         server1 = childNodeWithName("server") as? SKSpriteNode
@@ -137,7 +146,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let projectile = SKShapeNode(ellipseOfSize: CGSizeMake(40, 40))
                 projectile.physicsBody = SKPhysicsBody(circleOfRadius: 20)
                 projectile.physicsBody?.affectedByGravity = true
-                projectile.physicsBody?.usesPreciseCollisionDetection = true
+//                projectile.physicsBody?.usesPreciseCollisionDetection = true
                 projectile.fillColor = UIColor.yellowColor()
                 projectile.position = launcher.position
                 projectile.physicsBody?.categoryBitMask = contactMask
@@ -156,7 +165,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let projectile1 = SKSpriteNode(imageNamed: "fullstacker")
                 projectile1.physicsBody = SKPhysicsBody(texture: juniorTex, size: CGSize(width: 100, height: 100))
                 projectile1.physicsBody?.affectedByGravity = false
-                projectile1.physicsBody?.usesPreciseCollisionDetection = false
+//                projectile1.physicsBody?.usesPreciseCollisionDetection = false
 //                projectile1.fillColor = UIColor.redColor()
                 projectile1.position = CGPoint(x: 50, y: velocityY * 5)
                 projectile1.physicsBody?.categoryBitMask = 6
@@ -178,7 +187,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let projectile2 = SKShapeNode(ellipseOfSize: CGSizeMake(100, 100))
                 projectile2.physicsBody = SKPhysicsBody(circleOfRadius: 50)
                 projectile2.physicsBody?.affectedByGravity = true
-                projectile2.physicsBody?.usesPreciseCollisionDetection = true
+//                projectile2.physicsBody?.usesPreciseCollisionDetection = true
                 projectile2.fillColor = UIColor.cyanColor()
                 projectile2.position = launcher.position
                 projectile2.physicsBody?.categoryBitMask = contactMask
@@ -223,7 +232,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             }
             
+            if moveRight .containsPoint(location) {
+                
+                launcher.position.x = launcher.position.x + 15
+                
+            }
             
+            if moveLeft .containsPoint(location) {
+                
+                launcher.position.x = launcher.position.x - 15
+
+                
+            }
         }
     }
     
